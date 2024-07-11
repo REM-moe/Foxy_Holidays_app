@@ -11,7 +11,6 @@ class MyDrawer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // foxy logo
           Column(
             children: [
               const DrawerHeader(
@@ -26,46 +25,36 @@ class MyDrawer extends StatelessWidget {
                   ],
                 ),
               ),
-              // tours
               MyListTile(
                 myicon: Icons.airport_shuttle,
                 mystring: "Explore Packages",
                 ontap: () => Navigator.pop(context),
               ),
-              // contact
               MyListTile(
                 myicon: Icons.phone,
                 mystring: "Contact us",
                 ontap: () {
-                  // pop drawer
                   Navigator.pop(context);
-                  // goto contact page
                   Navigator.pushNamed(context, "/contact_us");
                 },
               ),
-              //about
               MyListTile(
                 myicon: Icons.info_outline,
                 mystring: "About us",
                 ontap: () {
-                  // pop drawer
                   Navigator.pop(context);
-                  // goto contact page
                   Navigator.pushNamed(context, "/about_us");
                 },
               ),
             ],
           ),
-          //exit
           Padding(
             padding: const EdgeInsets.only(bottom: 10.0),
             child: MyListTile(
               myicon: Icons.exit_to_app,
               mystring: "Exit",
               ontap: () {
-                // pop drawer
                 Navigator.pop(context);
-                // goto contact page
                 Navigator.pushNamed(context, "/intro_page");
               },
             ),

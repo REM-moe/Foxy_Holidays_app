@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:foxy_holidays/components/focy_country_card.dart';
+import 'package:foxy_holidays/components/focy_widget.dart';
 import 'package:foxy_holidays/components/foxy_drawer.dart';
 import 'package:foxy_holidays/components/foxy_tourtile.dart';
+import 'package:foxy_holidays/components/foxy_visa.dart';
 import 'package:foxy_holidays/models/get_tours.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class MainPageHome extends StatelessWidget {
   const MainPageHome({super.key});
@@ -11,7 +13,6 @@ class MainPageHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tours = context.watch<GetTours>().tours;
-    final Uri whatsappUri = Uri.parse('https://wa.me/919020827827');
 
     return Scaffold(
       appBar: AppBar(
@@ -30,11 +31,30 @@ class MainPageHome extends StatelessWidget {
           const SizedBox(
             height: 25,
           ),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: FoxyHolidaysWidget(),
+          ),
+
+          GestureDetector(
+            onTap: () {
+              // to Visa Page
+              Navigator.pushNamed(context, "/visa");
+            },
+            child: const FlightInfoCard(),
+          ),
+
           const Center(
-              child: Text("POPULAR PACKAGES",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18))),
+            child: Text(
+              "POPULAR PACKAGES",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+          ),
           SizedBox(
-            height: 500,
+            height: 600,
             child: ListView.builder(
               itemCount: tours.length,
               itemBuilder: (context, index) {
@@ -56,247 +76,63 @@ class MainPageHome extends StatelessWidget {
             ),
           ),
           // malasia
-          Wrap(
+          const Wrap(
             alignment: WrapAlignment.center,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: const Column(
-                  children: [
-                    Text(
-                      "MALAYSIA",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+              DestinationCard(
+                countryName: "MALAYSIA",
+                description:
+                    "Experience the vibrant culture and beautiful scenery",
+                imagePath: "assets/images/masia.jpg",
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: const Column(
-                  children: [
-                    Text(
-                      "SINGAPORE",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+              DestinationCard(
+                countryName: "CHINA",
+                description: "Discover the ancient culture and modern cities",
+                imagePath: "assets/images/china.jpg",
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: const Column(
-                  children: [
-                    Text(
-                      "CHINA",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+              DestinationCard(
+                  countryName: "MALDIVES",
+                  description: "Explore stunning island resorts",
+                  imagePath: "assets/images/mald.jpg"),
+              DestinationCard(
+                countryName: "THAILAND",
+                description:
+                    "Enjoy the beautiful beaches and rich cultural heritage",
+                imagePath: "assets/images/thai.jpg",
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: const Column(
-                  children: [
-                    Text(
-                      "MALDIVES",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+              DestinationCard(
+                countryName: "KASHMIR",
+                description: "Experience the breathtaking landscapes",
+                imagePath: "assets/images/kash.jpg",
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: const Column(
-                  children: [
-                    Text(
-                      "THAILAND",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+              DestinationCard(
+                countryName: "MANALI",
+                description: "Escape to the serene hills",
+                imagePath: "assets/images/manali.jpg",
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: const Column(
-                  children: [
-                    Text(
-                      "KASHMIR",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+              DestinationCard(
+                countryName: "AGRA",
+                description: "Visit the iconic Taj Mahal",
+                imagePath: "assets/images/agra.jpg",
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: const Column(
-                  children: [
-                    Text(
-                      "MANALI",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+              DestinationCard(
+                countryName: "DUBAI",
+                description: "Discover luxury and modernity",
+                imagePath: "assets/images/dubai.jpg",
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: const Column(
-                  children: [
-                    Text(
-                      "AGRA",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+              DestinationCard(
+                countryName: "DELHI",
+                description: "Explore India's vibrant capital city",
+                imagePath: "assets/images/delhi.jpg",
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: const Column(
-                  children: [
-                    Text(
-                      "DUBAI",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: const Column(
-                  children: [
-                    Text(
-                      "DELHI",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: const Column(
-                  children: [
-                    Text(
-                      "AND MORE...",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+              DestinationCard(
+                countryName: "AND MORE...",
+                description: "Explore more exciting destinations",
+                imagePath: "assets/images/world.jpg",
               ),
             ],
           ),
-          Center(
-            child: GestureDetector(
-              onTap: () async {
-                launchUrl(whatsappUri);
-                // whatsapp pop
-              },
-              child: Container(
-                width: 170,
-                padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.white,
-                ),
-                child: const Row(
-                  children: [
-                    Icon(Icons.phone_callback),
-                    Text(
-                      "WHATSAPP",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
+
           const SizedBox(
             height: 50,
           )
