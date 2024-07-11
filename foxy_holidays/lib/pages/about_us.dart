@@ -33,7 +33,7 @@ class FoxyHolidaysPage extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
-                          'assets/images/masia.jpg',
+                          'assets/images/masia.webp',
                           width: double.infinity,
                           height: 250,
                           fit: BoxFit.cover,

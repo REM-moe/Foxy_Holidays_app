@@ -75,7 +75,7 @@ class InstagramFoxy extends StatelessWidget {
                           topRight: Radius.circular(8),
                         ),
                         child: Image.asset(
-                          'assets/images/foxy.png',
+                          'assets/images/foxy.webp',
                           width: double.infinity,
                           height: 330,
                           fit: BoxFit.cover,

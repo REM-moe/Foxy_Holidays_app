@@ -13,7 +13,7 @@ class MyTourTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Container(
         width: 330,
         decoration: BoxDecoration(
@@ -22,10 +22,7 @@ class MyTourTile extends StatelessWidget {
             BoxShadow(
               blurRadius: 8,
               color: Color(0x230F1113),
-              offset: Offset(
-                0.0,
-                4,
-              ),
+              offset: Offset(0, 4),
             )
           ],
           borderRadius: BorderRadius.circular(12),
@@ -35,17 +32,13 @@ class MyTourTile extends StatelessWidget {
           ),
         ),
         child: Column(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.min,
           children: [
             AspectRatio(
               aspectRatio: 1,
-              child: Container(
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(12),
-                    topRight: Radius.circular(12),
-                  ),
-                ),
+              child: ClipRRect(
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(12)),
                 child: Image.asset(
                   tour.tourimgpath,
                   fit: BoxFit.cover,
@@ -53,9 +46,8 @@ class MyTourTile extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
+              padding: const EdgeInsets.all(12),
               child: Column(
-                mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
@@ -119,8 +111,7 @@ class MyTourTile extends StatelessWidget {
                         ),
                         alignment: Alignment.center,
                         child: Padding(
-                          padding:
-                              const EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: Text(
                             "₹${tour.price}",
                             style: const TextStyle(

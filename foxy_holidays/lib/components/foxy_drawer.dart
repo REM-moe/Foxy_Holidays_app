@@ -18,7 +18,7 @@ class MyDrawer extends StatelessWidget {
                   children: [
                     Center(
                       child: ImageIcon(
-                        AssetImage("assets/images/foxy_logo_color.png"),
+                        AssetImage("assets/images/foxy_logo_color.webp"),
                         size: 130,
                       ),
                     ),

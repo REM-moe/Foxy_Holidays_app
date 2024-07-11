@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foxy_holidays/components/focy_visa_card.dart';
+import 'package:foxy_holidays/components/foxy_visa_card.dart';
 
 class FoxyVisaPage extends StatelessWidget {
   const FoxyVisaPage({super.key});
@@ -48,27 +48,27 @@ class FoxyVisaPage extends StatelessWidget {
                   ),
                 ),
                 VisaDestinationCard(
-                    imageUrl: "assets/images/dubai.jpg",
+                    imageUrl: "assets/images/dubai.webp",
                     destinationName: "DUBAI",
                     price: "From Rs 5,000/-"),
                 VisaDestinationCard(
-                    imageUrl: "assets/images/china.jpg",
+                    imageUrl: "assets/images/china.webp",
                     destinationName: "CHINA",
                     price: "From Rs 7,917/-"),
                 VisaDestinationCard(
-                    imageUrl: "assets/images/singa.jpg",
+                    imageUrl: "assets/images/singa.webp",
                     destinationName: "SINGAPORE",
                     price: "From Rs 2,500/-"),
                 VisaDestinationCard(
-                    imageUrl: "assets/images/bharain.jpg",
+                    imageUrl: "assets/images/bharain.webp",
                     destinationName: "BAHRAIN",
                     price: "From Rs 13,199/-"),
                 VisaDestinationCard(
-                    imageUrl: "assets/images/thai.jpg",
+                    imageUrl: "assets/images/thai.webp",
                     destinationName: "THAILAND",
                     price: "From Rs 3,500/-"),
                 VisaDestinationCard(
-                    imageUrl: "assets/images/masia.jpg",
+                    imageUrl: "assets/images/masia.webp",
                     destinationName: "MALAYSIA",
                     price: "From Rs 3,550/-"),
               ],

@@ -12,3 +12,20 @@ class Tour {
       required this.tourimgpath,
       required this.tourname});
 }
+
+// Details of trip for foxy_itinarypage
+class TripDetails {
+  final String roundImage;
+  final String placeName;
+  final String timeof;
+  final String description;
+  final String placeImage;
+
+  TripDetails({
+    required this.placeName,
+    required this.roundImage,
+    required this.timeof,
+    required this.description,
+    required this.placeImage,
+  });
+}

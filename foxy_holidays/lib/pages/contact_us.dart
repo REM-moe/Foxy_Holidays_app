@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foxy_holidays/components/focy_widget.dart';
+import 'package:foxy_holidays/components/foxy_widget.dart';
 
 class ContactUsComponent extends StatelessWidget {
   const ContactUsComponent({super.key});
@@ -19,7 +19,7 @@ class ContactUsComponent extends StatelessWidget {
                   Stack(
                     children: [
                       Image.asset(
-                        'assets/images/world.jpg',
+                        'assets/images/world.webp',
                         width: double.infinity,
                         height: 340,
                         fit: BoxFit.cover,
@@ -63,11 +63,8 @@ class ContactUsComponent extends StatelessWidget {
                           BoxShadow(
                             blurRadius: 0,
                             color: Color(0xFFF1F4F8),
-                            offset: Offset(
-                              0.0,
-                              1,
-                            ),
-                          )
+                            offset: Offset(0, 1),
+                          ),
                         ],
                       ),
                       child: const Row(
@@ -109,11 +106,8 @@ class ContactUsComponent extends StatelessWidget {
                           BoxShadow(
                             blurRadius: 0,
                             color: Color(0xFFF1F4F8),
-                            offset: Offset(
-                              0.0,
-                              1,
-                            ),
-                          )
+                            offset: Offset(0, 1),
+                          ),
                         ],
                       ),
                       child: const Row(
@@ -122,7 +116,7 @@ class ContactUsComponent extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              '\nFoxy Holidays\nAshraf complex\nPk road, kannur Kerala,\n 670011 India.',
+                              '\nFoxy Holidays\nAshraf complex\nPk road, kannur Kerala,\n670011 India.',
                               style: TextStyle(
                                 color: Color(0xFF57636C),
                                 fontSize: 16,
@@ -156,7 +150,7 @@ class ContactUsComponent extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const FoxyHolidaysWidget()
+                  const FoxyHolidaysWidget(),
                 ],
               ),
             ),
