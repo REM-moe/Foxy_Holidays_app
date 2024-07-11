@@ -149,7 +149,7 @@ class FoxyHolidaysPage extends StatelessWidget {
                                   },
                                   style: ElevatedButton.styleFrom(
                                     // ignore: deprecated_member_use
-                                    primary: const Color(0xFF57636C),
+                                    backgroundColor: const Color(0xFF57636C),
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
                                             0, 0, 0, 0),

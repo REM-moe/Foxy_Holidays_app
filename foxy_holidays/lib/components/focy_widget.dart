@@ -27,25 +27,25 @@ class FoxyHolidaysWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Foxy Holidays',
-                style: Theme.of(context).textTheme.headline5!.copyWith(
-                      color: const Color(0xFF14181B),
-                      fontSize: 24,
-                      letterSpacing: 0,
-                      fontWeight: FontWeight.normal,
-                    ),
+                style: TextStyle(
+                  color: Color(0xFF14181B),
+                  fontSize: 24,
+                  letterSpacing: 0,
+                  fontWeight: FontWeight.normal,
+                ),
               ).animateOnPageLoad('textOnPageLoadAnimation1'),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
-                child: Text(
+                child: const Text(
                   'We Take You To Happiness ❤️',
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                        color: const Color(0xFF57636C),
-                        fontSize: 14,
-                        letterSpacing: 0,
-                        fontWeight: FontWeight.w500,
-                      ),
+                  style: TextStyle(
+                    color: Color(0xFF57636C),
+                    fontSize: 14,
+                    letterSpacing: 0,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ).animateOnPageLoad('textOnPageLoadAnimation2'),
               ),
               const Divider(
