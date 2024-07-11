@@ -62,7 +62,7 @@ class FlightInfoCard extends StatelessWidget {
                     Align(
                       alignment: const AlignmentDirectional(0, 0),
                       child: Text(
-                        'GET YOUR VISA VIA FOXY HOLIDAYS',
+                        'CLICK TO GET YOUR VISA VIA FOXY HOLIDAYS',
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                               color: Colors.black,
                               letterSpacing: 0,

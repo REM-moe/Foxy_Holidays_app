@@ -50,6 +50,8 @@
     <array>
         <string>tel</string>
         <string>whatsapp</string>
+        <string>instagram</string>
     </array>
+    
 </dict>
 </plist>

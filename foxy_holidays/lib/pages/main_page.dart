@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foxy_holidays/components/focy_country_card.dart';
 import 'package:foxy_holidays/components/focy_widget.dart';
 import 'package:foxy_holidays/components/foxy_drawer.dart';
+import 'package:foxy_holidays/components/foxy_instagram.dart';
 import 'package:foxy_holidays/components/foxy_tourtile.dart';
 import 'package:foxy_holidays/components/foxy_visa.dart';
 import 'package:foxy_holidays/models/get_tours.dart';
@@ -31,19 +32,17 @@ class MainPageHome extends StatelessWidget {
           const SizedBox(
             height: 25,
           ),
+          // Foxy CARD
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: FoxyHolidaysWidget(),
           ),
 
-          GestureDetector(
-            onTap: () {
-              // to Visa Page
-              Navigator.pushNamed(context, "/visa");
-            },
-            child: const FlightInfoCard(),
+          // INSTAGRAM CARD
+          const InstagramFoxy(),
+          const SizedBox(
+            height: 25,
           ),
-
           const Center(
             child: Text(
               "POPULAR PACKAGES",
@@ -52,6 +51,13 @@ class MainPageHome extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
+          ), // VISA CARD
+          GestureDetector(
+            onTap: () {
+              // to Visa Page
+              Navigator.pushNamed(context, "/visa");
+            },
+            child: const FlightInfoCard(),
           ),
           SizedBox(
             height: 600,

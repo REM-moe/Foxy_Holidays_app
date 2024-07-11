@@ -57,6 +57,7 @@ class DestinationCard extends StatelessWidget {
                   padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         countryName,
@@ -65,6 +66,23 @@ class DestinationCard extends StatelessWidget {
                           fontSize: 16,
                           letterSpacing: 0,
                           fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                        child: Container(
+                          width: 30,
+                          height: 30,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(
+                            Icons.chevron_right_rounded,
+                            color: Colors.black,
+                            size: 32,
+                          ),
                         ),
                       ),
                     ],
